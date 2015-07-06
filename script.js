@@ -3,11 +3,12 @@ $(function() {
 	var $resultsList = $("#results-list");
 	var resultsTemplate = _.template($("#results-template").html());
 
-	var Results = function(track, artist, album, albumImage) {
+	var Results = function(track, artist, album, albumImage, music) {
 		this.track = track;
 		this.artist = artist;
 		this.album = album;
 		this.albumImage = albumImage;
+		this.music = music;
 	}
 
 	Results.all = [];
@@ -33,7 +34,7 @@ $(function() {
 				console.log(data);
 				for (var i=0; i < 20; i++) {
 					var tracks = data.tracks.items[i];
-					var newResults = new Results(tracks.name, tracks.artists[0].name, tracks.album.name, tracks.album.images[0].url);
+					var newResults = new Results(tracks.name, tracks.artists[0].name, tracks.album.name, tracks.album.images[0].url, tracks.preview_url);
 					newResults.save();
 					newResults.render();
 				}
