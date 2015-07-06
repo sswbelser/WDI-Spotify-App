@@ -3,10 +3,11 @@ $(function() {
 	var $resultsList = $("#results-list");
 	var resultsTemplate = _.template($("#results-template").html());
 
-	var Results = function(track, artist) {
+	var Results = function(track, artist, album, albumImage) {
 		this.track = track;
 		this.artist = artist;
-		// this.album = album;
+		this.album = album;
+		this.albumImage = albumImage;
 	}
 
 	Results.all = [];
@@ -33,11 +34,11 @@ $(function() {
 					var tracks = data.tracks.items[i];
 					console.log(tracks.name);
 					console.log(tracks.artists[0].name);
+					var newResults = new Results(tracks.name, tracks.artists[0].name, tracks.album.name, tracks.album.images[0].url);
+					newResults.save();
+					newResults.render();
 				}
 			});
-		var newResults = new Results(data.tracks.items[i].name, data.tracks.items[0].artists[0].name);
-		newResults.save();
-		newResults.render();
 	});
 
 });

@@ -1,0 +1,24 @@
+body {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	background-image: url(http://wallfoy.com/wp-content/uploads/2014/03/Light-Blue-Wallpaper-83.jpg);
+	background-size: cover;
+}
+#title {
+	font-family: "Lucida Console", Monaco, monospace;
+}
+.results-text {
+	margin-top: 100px;
+}
+.new-track {
+	font-size: 25px;
+}
+.new-artist {
+	font-size: 15px;
+}
+.new-album {
+	font-size: 15px;
+}
+#new-album-cover {
+	padding: 1px;
+	border: 1px solid black;
+}
