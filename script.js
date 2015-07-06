@@ -33,8 +33,6 @@ $(function() {
 				console.log(data);
 				for (var i=0; i < 20; i++) {
 					var tracks = data.tracks.items[i];
-					console.log(tracks.name);
-					console.log(tracks.artists[0].name);
 					var newResults = new Results(tracks.name, tracks.artists[0].name, tracks.album.name, tracks.album.images[0].url);
 					newResults.save();
 					newResults.render();
