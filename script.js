@@ -25,6 +25,7 @@ $(function() {
 
 	$newSearch.on("submit", function () {
 		event.preventDefault();
+		$resultsList.empty();
 		var trackSubmit = $("#track").val();
 		$.get(
 			"https://api.spotify.com/v1/search?type=track&q=" + trackSubmit,
