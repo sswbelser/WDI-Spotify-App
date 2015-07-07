@@ -32,7 +32,7 @@ $(function() {
 			"https://api.spotify.com/v1/search?type=track&q=" + trackSubmit,
 			function(data) {
 				console.log(data);
-				for (var i=0; i < 20; i++) {
+				for (var i=0; i < 10; i++) {
 					var tracks = data.tracks.items[i];
 					var newResults = new Results(tracks.name, tracks.artists[0].name, tracks.album.name, tracks.album.images[0].url, tracks.preview_url);
 					newResults.save();
